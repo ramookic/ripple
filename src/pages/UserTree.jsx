@@ -1,5 +1,7 @@
+import UserTreeLayout from "../features/userTree/components/UserTreeLayout";
+
 function UserTree() {
-  return <div>User Tree Page</div>;
+  return <UserTreeLayout />;
 }
 
 export default UserTree;

@@ -11,6 +11,8 @@ export const RESERVED_KEYWORDS = [
   "login",
   "register",
   "forgot-password",
+  "not-found",
+  "admin/not-found",
   "admin/links",
   "admin/analytics",
   "admin/appearance",

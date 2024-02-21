@@ -1,10 +1,10 @@
 import { Outlet, useLocation } from "react-router-dom";
+import styled from "styled-components";
+import { useDocumentTitle } from "@uidotdev/usehooks";
 
 import AuthHeading from "../../features/authentication/components/AuthHeading";
-import Logo from "../ui/Logo";
-import styled from "styled-components";
 import AuthFooter from "../../features/authentication/components/AuthFooter";
-import { useDocumentTitle } from "@uidotdev/usehooks";
+import Logo from "../ui/Logo";
 
 const StyledAuthLayout = styled.div`
   height: 100vh;

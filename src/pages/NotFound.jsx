@@ -1,5 +1,7 @@
+import NotFoundLayout from "../components/layout/NotFoundLayout";
+
 function NotFound() {
-  return <div>Not Found Page</div>;
+  return <NotFoundLayout />;
 }
 
 export default NotFound;
