@@ -14,7 +14,7 @@ const StyledUserTreeHeader = styled.header`
   }
 
   & h1 {
-    font-size: ${(props) => (props.$isPreview ? "16px" : "20px")};
+    font-size: ${(props) => (props.$isPreview ? "18px" : "20px")};
     font-weight: ${(props) => (props.$isPreview ? "500" : "600")};
   }
 
@@ -25,8 +25,8 @@ const StyledUserTreeHeader = styled.header`
 
   & img {
     object-fit: cover;
-    width: ${(props) => (props.$isPreview ? "60px" : "100px")};
-    height: ${(props) => (props.$isPreview ? "60px" : "100px")};
+    width: ${(props) => (props.$isPreview ? "80px" : "100px")};
+    height: ${(props) => (props.$isPreview ? "80px" : "100px")};
     border-radius: 100%;
   }
 
@@ -34,12 +34,12 @@ const StyledUserTreeHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: ${(props) => (props.$isPreview ? "60px" : "100px")};
-    height: ${(props) => (props.$isPreview ? "60px" : "100px")};
+    width: ${(props) => (props.$isPreview ? "80px" : "100px")};
+    height: ${(props) => (props.$isPreview ? "80px" : "100px")};
     border-radius: 100%;
     background: var(--color-grey-900);
     color: var(--color-grey-0);
-    font-size: ${(props) => (props.$isPreview ? "20px" : "32px")};
+    font-size: ${(props) => (props.$isPreview ? "28px" : "32px")};
     font-weight: 500;
   }
 `;

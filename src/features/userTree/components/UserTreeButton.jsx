@@ -4,8 +4,8 @@ import tinycolor from "tinycolor2";
 const UserTreeButton = styled.a`
   display: ${(props) => (props.$display ? "block" : "none")};
   font-weight: 600;
-  font-size: ${(props) => (props.$isPreview ? "12px" : "15px")};
-  padding: ${(props) => (props.$isPreview ? "10px" : "20px")};
+  font-size: ${(props) => (props.$isPreview ? "14px" : "15px")};
+  padding: ${(props) => (props.$isPreview ? "14px" : "20px")};
   width: 100%;
   text-align: center;
   transition: 0.3s ease;
