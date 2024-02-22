@@ -1,26 +1,26 @@
 import styled from "styled-components";
 
-import AdminLink from "./AdminLink";
+import UserLink from "./UserLink";
 
 import { useUser } from "../../authentication/hooks/useUser";
 import { useGetLinks } from "../hooks/useGetLinks";
 
-const StyledAdminLinks = styled.div`
+const StyledUserLinks = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
 `;
 
-function AdminLinks() {
+function UserLinks() {
   const { user } = useUser();
   const { links, isPending } = useGetLinks(user.id);
 
   if (isPending) return <p>Loading...</p>;
 
   return (
-    <StyledAdminLinks>
+    <StyledUserLinks>
       {links.map((link) => (
-        <AdminLink
+        <UserLink
           title={link.title}
           linkTo={link.link}
           display={link.display}
@@ -28,8 +28,8 @@ function AdminLinks() {
           key={link.id}
         />
       ))}
-    </StyledAdminLinks>
+    </StyledUserLinks>
   );
 }
 
-export default AdminLinks;
+export default UserLinks;

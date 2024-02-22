@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "themeTitle": "Air White",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#ffffff",
+      "buttonsType": "fill",
+      "buttonsRounded": "semiRounded",
+      "buttonsBackgroundColor": "#e5e5e5",
+      "buttonsFontColor": "#000000",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#000000"
+    }
+  },
+  {
+    "id": 2,
+    "themeTitle": "Air Leaf",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#ffffff",
+      "buttonsType": "fill",
+      "buttonsRounded": "semiRounded",
+      "buttonsBackgroundColor": "#22c55e",
+      "buttonsFontColor": "#ffffff",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#000000"
+    }
+  },
+  {
+    "id": 3,
+    "themeTitle": "Air Moon",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#ffffff",
+      "buttonsType": "fill",
+      "buttonsRounded": "semiRounded",
+      "buttonsBackgroundColor": "#3b82f6",
+      "buttonsFontColor": "#ffffff",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#000000"
+    }
+  },
+  {
+    "id": 4,
+    "themeTitle": "Air Snow",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#ffffff",
+      "buttonsType": "fill",
+      "buttonsRounded": "semiRounded",
+      "buttonsBackgroundColor": "#262626",
+      "buttonsFontColor": "#ffffff",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#000000"
+    }
+  },
+  {
+    "id": 5,
+    "themeTitle": "Air Grey",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#e5e5e5",
+      "buttonsType": "fill",
+      "buttonsRounded": "semiRounded",
+      "buttonsBackgroundColor": "#ffffff",
+      "buttonsFontColor": "#000000",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#000000"
+    }
+  },
+  {
+    "id": 6,
+    "themeTitle": "Air Smoke",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#262626",
+      "buttonsType": "fill",
+      "buttonsRounded": "semiRounded",
+      "buttonsBackgroundColor": "#ffffff",
+      "buttonsFontColor": "#000000",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#ffffff"
+    }
+  },
+  {
+    "id": 7,
+    "themeTitle": "Air Black",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#0a0a0a",
+      "buttonsType": "fill",
+      "buttonsRounded": "semiRounded",
+      "buttonsBackgroundColor": "#737373",
+      "buttonsFontColor": "#000000",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#ffffff"
+    }
+  },
+  {
+    "id": 8,
+    "themeTitle": "Mineral Blue",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#cffafe",
+      "buttonsType": "outline",
+      "buttonsRounded": "rounded",
+      "buttonsBackgroundColor": "#171717",
+      "buttonsFontColor": "#000000",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#000000"
+    }
+  },
+  {
+    "id": 9,
+    "themeTitle": "Mineral Green",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#dcfce7",
+      "buttonsType": "outline",
+      "buttonsRounded": "rounded",
+      "buttonsBackgroundColor": "#171717",
+      "buttonsFontColor": "#000000",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#000000"
+    }
+  },
+  {
+    "id": 10,
+    "themeTitle": "Mineral Orange",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#ffedd5",
+      "buttonsType": "outline",
+      "buttonsRounded": "rounded",
+      "buttonsBackgroundColor": "#171717",
+      "buttonsFontColor": "#000000",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#000000"
+    }
+  },
+  {
+    "id": 11,
+    "themeTitle": "Mineral Yellow",
+    "appearance": {
+      "backgroundType": "flat",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#fef9c3",
+      "buttonsType": "outline",
+      "buttonsRounded": "rounded",
+      "buttonsBackgroundColor": "#171717",
+      "buttonsFontColor": "#000000",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#000000"
+    }
+  },
+  {
+    "id": 12,
+    "themeTitle": "Noir",
+    "appearance": {
+      "backgroundType": "gradient",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#1f2937",
+      "buttonsType": "outline",
+      "buttonsRounded": "rounded",
+      "buttonsBackgroundColor": "#ffffff",
+      "buttonsFontColor": "#ffffff",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#ffffff"
+    }
+  },
+  {
+    "id": 13,
+    "themeTitle": "Bloom",
+    "appearance": {
+      "backgroundType": "gradient",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#a21caf",
+      "buttonsType": "outline",
+      "buttonsRounded": "rounded",
+      "buttonsBackgroundColor": "#ffffff",
+      "buttonsFontColor": "#ffffff",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#ffffff"
+    }
+  },
+  {
+    "id": 14,
+    "themeTitle": "Miami",
+    "appearance": {
+      "backgroundType": "gradient",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#be123c",
+      "buttonsType": "outline",
+      "buttonsRounded": "rounded",
+      "buttonsBackgroundColor": "#ffffff",
+      "buttonsFontColor": "#ffffff",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#ffffff"
+    }
+  },
+  {
+    "id": 15,
+    "themeTitle": "Spray",
+    "appearance": {
+      "backgroundType": "gradient",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#4338ca",
+      "buttonsType": "outline",
+      "buttonsRounded": "rounded",
+      "buttonsBackgroundColor": "#ffffff",
+      "buttonsFontColor": "#ffffff",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#ffffff"
+    }
+  },
+  {
+    "id": 16,
+    "themeTitle": "Mint",
+    "appearance": {
+      "backgroundType": "gradient",
+      "backgroundDirection": "to top",
+      "backgroundColor": "#15803d",
+      "buttonsType": "outline",
+      "buttonsRounded": "rounded",
+      "buttonsBackgroundColor": "#ffffff",
+      "buttonsFontColor": "#ffffff",
+      "buttonsShadowColor": "#000000",
+      "fontColor": "#ffffff"
+    }
+  }
+]

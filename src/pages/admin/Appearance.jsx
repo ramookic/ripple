@@ -5,12 +5,15 @@ import UserBackgrounds from "../../features/admin/components/UserBackgrounds.jsx
 import UserButtons from "../../features/admin/components/UserButtons";
 import UserFonts from "../../features/admin/components/UserFonts";
 import UserProfile from "../../features/admin/components/UserProfile";
+import UserThemes from "../../features/admin/components/UserThemes.jsx";
 
 function Appearance() {
   return (
     <AdminPageLayout>
       <Heading>Profile</Heading>
       <UserProfile />
+      <Heading>Themes</Heading>
+      <UserThemes />
       <Heading>Custom appearance</Heading>
       <SubHeading>
         Completely customize your Ripple profile. Change your background with

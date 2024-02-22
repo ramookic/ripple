@@ -5,7 +5,7 @@ import DeleteLinkModal from "./DeleteLinkModal";
 
 import { useUpdateLink } from "../hooks/useUpdateLink";
 
-const StyledAdminLink = styled.div`
+const StyledUserLink = styled.div`
   background: var(--color-grey-0);
   border-radius: 20px;
   padding: 40px;
@@ -35,7 +35,7 @@ const StyledAdminLink = styled.div`
   }
 `;
 
-function AdminLink({ title, linkTo, display, id }) {
+function UserLink({ title, linkTo, display, id }) {
   const { updateLink } = useUpdateLink();
 
   function showLink() {
@@ -43,7 +43,7 @@ function AdminLink({ title, linkTo, display, id }) {
   }
 
   return (
-    <StyledAdminLink>
+    <StyledUserLink>
       <div>
         <p>{title}</p>
         <span href="$">{linkTo}</span>
@@ -52,8 +52,8 @@ function AdminLink({ title, linkTo, display, id }) {
         <Switch isChecked={display} onClick={showLink} />
         <DeleteLinkModal linkId={id} />
       </div>
-    </StyledAdminLink>
+    </StyledUserLink>
   );
 }
 
-export default AdminLink;
+export default UserLink;
