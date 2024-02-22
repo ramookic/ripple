@@ -10,18 +10,24 @@ import styled from "styled-components";
 const StyledAdminMenu = styled.div`
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 
   & a {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--color-grey-500);
     display: flex;
     align-items: center;
     gap: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-grey-500);
+    padding: 10px 14px;
+    border-radius: 6px;
 
     &.active {
       color: var(--color-grey-900);
+    }
+
+    &:hover {
+      background: var(--color-grey-100);
     }
 
     & span {
@@ -32,8 +38,15 @@ const StyledAdminMenu = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    gap: 40px;
+
     & a {
       flex-direction: column;
+      padding: 0;
+
+      &:hover {
+        background: none;
+      }
     }
   }
 `;

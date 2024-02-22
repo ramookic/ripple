@@ -40,12 +40,12 @@ const StyledButton = styled.button`
   }
 
   &.secondary {
-    border: 1px solid var(--color-grey-100);
+    border: 1px solid var(--color-grey-200);
     background: var(--color-grey-0);
     color: var(--color-grey-900);
 
     &:hover {
-      background: var(--color-grey-100);
+      background: var(--color-grey-200);
     }
   }
 

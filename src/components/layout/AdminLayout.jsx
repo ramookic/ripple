@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import AdminHeader from "../../features/admin/components/AdminHeader";
 import styled from "styled-components";
@@ -19,7 +19,7 @@ const StyledAdminLayout = styled.div`
       padding-bottom: 4rem;
       display: flex;
       justify-content: center;
-      width: calc(100% - 600px);
+      width: ${(props) => (props.$hidePreview ? "100%" : "calc(100% - 600px)")};
 
       @media screen and (max-width: 768px) {
         padding-top: 12rem;
@@ -65,16 +65,25 @@ const StyledAdminLayout = styled.div`
 `;
 
 function AdminLayout() {
+  const location = useLocation();
+  const hidePreview =
+    location.pathname.includes("analytics") ||
+    location.pathname.includes("settings");
+
   return (
-    <StyledAdminLayout>
+    <StyledAdminLayout $hidePreview={hidePreview}>
       <AdminHeader />
       <div>
         <main>
           <Outlet />
         </main>
-        <aside>
-          <PreviewContainer />
-        </aside>
+        {!hidePreview ? (
+          <aside>
+            <PreviewContainer />
+          </aside>
+        ) : (
+          ""
+        )}
       </div>
       <MobilePreviewModal />
     </StyledAdminLayout>

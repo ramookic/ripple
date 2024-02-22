@@ -15,15 +15,20 @@ const Layout = styled.div`
 const StyledAdminHeader = styled.header`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background: var(--color-grey-0);
-  padding: 10px 16px 10px 30px;
+  padding: 14px 0px 14px 30px;
   border-radius: 50px;
   margin: 10px 20px;
+
+  & > :nth-child(2) {
+    margin-left: 20px;
+  }
 
   & > :nth-child(3) {
     display: flex;
     align-items: center;
+    position: absolute;
+    right: 34px;
     gap: 20px;
   }
 
@@ -40,6 +45,7 @@ const StyledAdminHeader = styled.header`
     margin: 0px;
 
     & > :nth-child(1) {
+      margin-left: 0;
       padding: 0 20px;
       grid-area: 1 / 1 / 2 / 2;
     }
@@ -54,6 +60,7 @@ const StyledAdminHeader = styled.header`
     }
 
     & > :nth-child(3) {
+      right: 10px;
       padding: 0 20px;
       display: flex;
       align-items: center;
