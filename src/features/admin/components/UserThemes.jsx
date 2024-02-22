@@ -5,6 +5,7 @@ import { useUser } from "../../authentication/hooks/useUser";
 import { useGetAppearance } from "../hooks/useGetAppearance";
 import themes from "../data/themes.json";
 import UserTheme from "./UserTheme";
+import SkeletonAdminContainer from "../../../components/skeleton/SkeletonAdminContainer";
 
 const StyledUserThemes = styled.div`
   display: grid;
@@ -38,7 +39,7 @@ function UserThemes() {
   const { appearance, isPending } = useGetAppearance(user.id);
   const { updateAppearance } = useUpdateAppearance();
 
-  if (isPending) return null;
+  if (isPending) return <SkeletonAdminContainer />;
 
   const { id } = appearance;
 

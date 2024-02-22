@@ -4,6 +4,7 @@ import { useUser } from "../../authentication/hooks/useUser";
 import { useGetAppearance } from "../hooks/useGetAppearance";
 import { useUpdateAppearance } from "../hooks/useUpdateAppearance";
 import AdminContainer from "./AdminContainer";
+import SkeletonAdminContainer from "../../../components/skeleton/SkeletonAdminContainer";
 
 const StyledUserButtons = styled.div`
   display: flex;
@@ -65,7 +66,7 @@ function UserButtons() {
   const { appearance, isPending } = useGetAppearance(user.id);
   const { updateAppearance } = useUpdateAppearance();
 
-  if (isPending) return null;
+  if (isPending) return <SkeletonAdminContainer />;
 
   const {
     id,

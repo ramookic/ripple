@@ -7,6 +7,7 @@ import { useUser } from "../../authentication/hooks/useUser";
 import ColorPicker from "../../../components/ui/ColorPicker";
 import { useUpdateAppearance } from "../hooks/useUpdateAppearance";
 import UserBackgroundDirection from "./UserBackgroundDirection";
+import SkeletonAdminContainer from "../../../components/skeleton/SkeletonAdminContainer";
 
 const StyledUserBackgrounds = styled.div`
   display: grid;
@@ -81,7 +82,7 @@ function UserBackgrounds() {
   const { appearance, isPending } = useGetAppearance(user.id);
   const { updateAppearance } = useUpdateAppearance();
 
-  if (isPending) return null;
+  if (isPending) return <SkeletonAdminContainer />;
 
   const { id, backgroundColor, backgroundType, backgroundDirection } =
     appearance;

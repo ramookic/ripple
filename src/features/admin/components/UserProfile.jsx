@@ -5,6 +5,7 @@ import Button from "../../../components/ui/Button";
 import AdminContainer from "./AdminContainer";
 import Input from "../../../components/form/Input";
 import FileUploadModal from "./FileUploadModal";
+import SkeletonAdminContainer from "../../../components/skeleton/SkeletonAdminContainer";
 
 const StyledUserProfile = styled.div`
   display: flex;
@@ -49,7 +50,7 @@ function UserProfile() {
   const { user } = useUser();
   const { profile, isPending } = useGetProfile(user.id);
 
-  if (isPending) return;
+  if (isPending) return <SkeletonAdminContainer />;
 
   const { profileTitle, profileImage, username, bio } = profile;
 

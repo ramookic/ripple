@@ -1,4 +1,5 @@
 import ColorPicker from "../../../components/ui/ColorPicker";
+import SpinnerMini from "../../../components/ui/SpinnerMini";
 import { useUser } from "../../authentication/hooks/useUser";
 import { useGetAppearance } from "../hooks/useGetAppearance";
 import { useUpdateAppearance } from "../hooks/useUpdateAppearance";
@@ -10,7 +11,8 @@ function UserFonts() {
   const { appearance, isPending } = useGetAppearance(user.id);
   const { updateAppearance } = useUpdateAppearance();
 
-  if (isPending) return null;
+  if (isPending)
+    return <SpinnerMini color="var(--color-green-500)" size={28} />;
 
   const { id, fontColor, font } = appearance;
 

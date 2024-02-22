@@ -8,6 +8,7 @@ import { useGetAppearance } from "../hooks/useGetAppearance";
 import UserTreeHeader from "../../userTree/components/UserTreeHeader";
 import UserTreeLinkList from "../../userTree/components/UserTreeLinkList";
 import { useGetLinks } from "../hooks/useGetLinks";
+import SpinnerMini from "../../../components/ui/SpinnerMini";
 
 const StyledPreviewContainer = styled.div`
   font-family: ${(props) => props.$font}, "sans-serif";
@@ -43,7 +44,8 @@ function PreviewContainer() {
     user.id
   );
 
-  if (isPendingLinks || isPendingProfile || isPendingAppearance) return null;
+  if (isPendingLinks || isPendingProfile || isPendingAppearance)
+    return <SpinnerMini color="var(--color-green-500)" size={28} />;
 
   return (
     <StyledPreviewContainer

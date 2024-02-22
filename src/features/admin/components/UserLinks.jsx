@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import UserLink from "./UserLink";
+import SkeletonUserLinks from "../../../components/skeleton/SkeletonUserLinks";
 
 import { useUser } from "../../authentication/hooks/useUser";
 import { useGetLinks } from "../hooks/useGetLinks";
@@ -15,7 +16,7 @@ function UserLinks() {
   const { user } = useUser();
   const { links, isPending } = useGetLinks(user.id);
 
-  if (isPending) return <p>Loading...</p>;
+  if (isPending) return <SkeletonUserLinks />;
 
   return (
     <StyledUserLinks>

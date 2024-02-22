@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useUser } from "../../authentication/hooks/useUser";
 import { useGetProfile } from "../hooks/useGetProfile";
+import SpinnerMini from "../../../components/ui/SpinnerMini";
 
 const StyledUserMenuButton = styled.button`
   outline-offset: 4px;
@@ -27,7 +28,8 @@ function UserMenu({ onClick }) {
   const { user } = useUser();
   const { profile, isPending } = useGetProfile(user.id);
 
-  if (isPending) return;
+  if (isPending)
+    return <SpinnerMini color="var(--color-green-500)" size={28} />;
 
   const { profileImage, username } = profile;
 
