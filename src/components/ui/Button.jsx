@@ -30,8 +30,8 @@ const StyledButton = styled.button`
 
   &.light {
     color: var(--color-grey-900);
-    background: var(--color-grey-100);
-    border: 1px solid var(--color-grey-100);
+    background: var(--color-grey-50);
+    border: 1px solid var(--color-grey-50);
 
     &:hover {
       background: var(--color-grey-0);
@@ -62,12 +62,13 @@ const StyledButton = styled.button`
 
   &.red {
     border: 1px solid var(--color-red-500);
-    background: var(--color-red-500);
-    color: var(--color-grey-0);
+    background: var(--color-grey-0);
+    color: var(--color-red-500);
 
     &:hover {
       border: 1px solid var(--color-red-700);
       background: var(--color-red-700);
+      color: var(--color-grey-0);
     }
   }
 `;

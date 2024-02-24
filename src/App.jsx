@@ -9,7 +9,7 @@ import Register from "./pages/Register";
 import UserTree from "./pages/UserTree";
 import NotFound from "./pages/NotFound";
 
-import Admin from "./pages/admin/Admin";
+import Links from "./pages/admin/Links";
 import Appearance from "./pages/admin/Appearance";
 import Analytics from "./pages/admin/Analytics";
 import Settings from "./pages/admin/Settings";
@@ -54,7 +54,7 @@ function App() {
             }
           >
             <Route index element={<Navigate replace to="links" />} />
-            <Route path="links" element={<Admin />} />
+            <Route path="links" element={<Links />} />
             <Route path="appearance" element={<Appearance />} />
             <Route path="analytics" element={<Analytics />} />
             <Route path="settings" element={<Settings />} />

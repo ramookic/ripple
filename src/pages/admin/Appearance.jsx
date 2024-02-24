@@ -1,11 +1,11 @@
 import AdminPageLayout from "../../components/layout/AdminPageLayout";
 import Heading from "../../components/ui/Heading";
 import SubHeading from "../../components/ui/SubHeading";
-import UserBackgrounds from "../../features/admin/components/UserBackgrounds.jsx";
-import UserButtons from "../../features/admin/components/UserButtons";
-import UserFonts from "../../features/admin/components/UserFonts";
-import UserProfile from "../../features/admin/components/UserProfile";
-import UserThemes from "../../features/admin/components/UserThemes.jsx";
+import UserBackgrounds from "../../features/appearance/components/UserBackgrounds.jsx";
+import UserButtons from "../../features/appearance/components/UserButtons";
+import UserFonts from "../../features/appearance/components/UserFonts";
+import UserProfile from "../../features/profile/components/UserProfile";
+import UserThemes from "../../features/appearance/components/UserThemes.jsx";
 
 function Appearance() {
   return (

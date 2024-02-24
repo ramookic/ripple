@@ -9,6 +9,7 @@ import UserTreeLinkList from "./UserTreeLinkList";
 import Button from "../../../components/ui/Button";
 
 import { useUserTree } from "../hooks/useUserTree";
+import UserTreeSocialIcons from "./UserTreeSocialIcons";
 
 const StyledUserTreeLayout = styled.div`
   min-height: 100vh;
@@ -43,6 +44,7 @@ function UserTreeLayout() {
     bio,
     appearance,
     links,
+    socialIcons,
   } = data;
 
   return (
@@ -69,7 +71,10 @@ function UserTreeLayout() {
           username={usernameDb}
         />
         <UserTreeLinkList links={links} appearance={appearance} />
-        {/* <UserTreeSocialIcons data={data} /> */}
+        <UserTreeSocialIcons
+          icons={socialIcons}
+          backgroundColor={appearance.backgroundColor}
+        />
         <Button className="fit-content light" to="/register">
           <SiLinktree /> Create your Ripple
         </Button>

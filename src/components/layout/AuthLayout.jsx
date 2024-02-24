@@ -1,10 +1,13 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useDocumentTitle } from "@uidotdev/usehooks";
 
 import AuthHeading from "../../features/authentication/components/AuthHeading";
 import AuthFooter from "../../features/authentication/components/AuthFooter";
 import Logo from "../ui/Logo";
+import { useUser } from "../../features/authentication/hooks/useUser";
+import BlankPage from "../ui/BlankPage";
+import { useEffect } from "react";
 
 const StyledAuthLayout = styled.div`
   height: 100vh;
@@ -55,9 +58,24 @@ const StyledAuthLayout = styled.div`
 `;
 
 function AuthLayout() {
+  const navigate = useNavigate();
   const location = useLocation();
+
   const isOnLoginPage = location.pathname.includes("login");
   useDocumentTitle("Log in or Sign up | Ripple");
+
+  const { isAuthenticated, isPending } = useUser();
+
+  useEffect(
+    function () {
+      if (!isPending && isAuthenticated) {
+        navigate("/admin");
+      }
+    },
+    [isPending, isAuthenticated, navigate]
+  );
+
+  if (isPending) return <BlankPage />;
 
   return (
     <StyledAuthLayout>

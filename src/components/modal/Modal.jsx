@@ -33,7 +33,7 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #37415183;
+  background-color: #17171774;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -51,6 +51,7 @@ const Header = styled.div`
   & p {
     font-weight: 600;
     font-size: 15px;
+    text-transform: capitalize;
   }
 
   & button {

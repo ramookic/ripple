@@ -44,3 +44,21 @@ export const SOCIAL_SHARE = {
   messenger: `https://www.facebook.com/dialog/send?link=${DOMAIN_NAME}`,
   email: `mailto:?subject=Check%20this%20out&body=I%20thought%20you%20might%20find%20this%20interesting:%2${DOMAIN_NAME}`,
 };
+
+export const SOCIAL_ICONS = [
+  "snapchat",
+  "instagram",
+  "facebook",
+  "youtube",
+  "tiktok",
+  "whatsapp",
+];
+
+export const SOCIAL_ICONS_SHARE = {
+  snapchat: "https://snapchat.com/",
+  instagram: "https://instagram.com/",
+  facebook: "https://facebook.com/",
+  youtube: "https://youtube.com/",
+  tiktok: "https://tiktok.com/@",
+  whatsapp: "https://whatsapp.com/",
+};

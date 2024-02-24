@@ -1,9 +1,10 @@
 import { Outlet, useLocation } from "react-router-dom";
 
-import AdminHeader from "../../features/admin/components/AdminHeader";
+import AdminHeader from "../../features/dashboard/components/AdminHeader";
 import styled from "styled-components";
-import PreviewContainer from "../../features/admin/components/PreviewContainer";
-import MobilePreviewModal from "../../features/admin/components/MobilePreviewModal";
+import PreviewContainer from "../../features/preview/components/PreviewContainer";
+import MobilePreviewModal from "../../features/preview/components/MobilePreviewModal";
+import { useDocumentTitle } from "@uidotdev/usehooks";
 
 const StyledAdminLayout = styled.div`
   position: relative;
@@ -69,6 +70,7 @@ function AdminLayout() {
   const hidePreview =
     location.pathname.includes("analytics") ||
     location.pathname.includes("settings");
+  useDocumentTitle("Ripple Admin");
 
   return (
     <StyledAdminLayout $hidePreview={hidePreview}>

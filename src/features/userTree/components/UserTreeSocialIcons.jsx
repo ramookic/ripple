@@ -1,74 +1,45 @@
 import React from "react";
 import styled from "styled-components";
 import tinycolor from "tinycolor2";
-
-import {
-  FaSnapchat,
-  FaInstagram,
-  FaFacebookF,
-  FaYoutube,
-  FaTiktok,
-  FaWhatsapp,
-} from "react-icons/fa6";
-
-const Icons = {
-  snapchat: FaSnapchat,
-  instagram: FaInstagram,
-  facebook: FaFacebookF,
-  youtube: FaYoutube,
-  tiktok: FaTiktok,
-  whatsapp: FaWhatsapp,
-};
-
-const shareString = {
-  snapchat: "https://snapchat.com/",
-  instagram: "https://instagram.com/",
-  facebook: "https://facebook.com/",
-  youtube: "https://youtube.com/",
-  tiktok: "https://tiktok.com/@",
-  whatsapp: "https://whatsapp.com/",
-};
+import Icons from "../../appearance/components/Icons";
+import { SOCIAL_ICONS_SHARE } from "../../../config";
 
 const StyledUserTreeSocialIcons = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+`;
 
-  & a {
-    font-size: 32px;
-    color: ${(props) =>
-      tinycolor(props.$backgroundColor).isDark()
-        ? "var(--color-grey-0)"
-        : "var(--color-grey-900)"};
-    transition: 0.3s ease;
+const Icon = styled.a`
+  display: ${(props) => (props.$display ? "flex" : "none")};
+  font-size: 32px;
+  color: ${(props) =>
+    tinycolor(props.$backgroundColor).isDark()
+      ? "var(--color-grey-0)"
+      : "var(--color-grey-900)"};
+  transition: 0.3s ease;
 
-    &:hover {
-      scale: 1.2;
-    }
+  &:hover {
+    scale: 1.1;
   }
 `;
 
-function UserTreeSocialIcons({ data }) {
-  const { socialIcons: links } = data;
-  const { color: backgroundColor } = data.apperance.background;
-
+function UserTreeSocialIcons({ icons, backgroundColor }) {
   return (
-    <StyledUserTreeSocialIcons $background={backgroundColor}>
-      {links.map((link) =>
-        link.link === "" ? (
-          ""
-        ) : (
-          <a
-            href={shareString[link.icon] + link.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={link.icon}
-          >
-            {React.createElement(Icons[link.icon])}
-          </a>
-        )
-      )}
+    <StyledUserTreeSocialIcons>
+      {icons.map((icon) => (
+        <Icon
+          $backgroundColor={backgroundColor}
+          $display={icon.display}
+          href={SOCIAL_ICONS_SHARE[icon.social] + icon.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          key={icon.id}
+        >
+          {React.createElement(Icons[icon.social])}
+        </Icon>
+      ))}
     </StyledUserTreeSocialIcons>
   );
 }
