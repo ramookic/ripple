@@ -3,7 +3,6 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
-import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import UserTree from "./pages/UserTree";
@@ -14,7 +13,6 @@ import Appearance from "./pages/admin/Appearance";
 import Analytics from "./pages/admin/Analytics";
 import Settings from "./pages/admin/Settings";
 
-import PublicLayout from "./components/layout/PublicLayout";
 import AuthLayout from "./components/layout/AuthLayout";
 import AdminLayout from "./components/layout/AdminLayout";
 
@@ -34,9 +32,7 @@ function App() {
       <ReactQueryDevtools initialIsOpen={false} />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<PublicLayout />}>
-            <Route index element={<Home />} />
-          </Route>
+          <Route path="/" element={<Navigate replace to="/login" />} />
 
           <Route path="/login" element={<AuthLayout />}>
             <Route index element={<Login />} />

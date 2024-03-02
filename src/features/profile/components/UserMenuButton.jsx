@@ -24,7 +24,7 @@ const StyledUserMenuButton = styled.button`
   }
 `;
 
-function UserMenu({ onClick }) {
+function UserMenuButton() {
   const { user } = useUser();
   const { profile, isPending } = useGetProfile(user.id);
 
@@ -44,4 +44,4 @@ function UserMenu({ onClick }) {
   );
 }
 
-export default UserMenu;
+export default UserMenuButton;

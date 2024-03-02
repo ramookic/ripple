@@ -13,7 +13,6 @@ const StyledInlideEdit = styled.input`
   font-size: 15px;
   border: none;
   outline: none;
-  width: fit-content;
 
   &:hover {
     border: none;
@@ -55,8 +54,11 @@ function InlineEdit({ type, value, handleUpdate }) {
         onChange={handleInputChange}
         onFocus={() => setHideIcon(false)}
         onBlur={() => setHideIcon(true)}
+        style={{ size: value.length + 1 }}
       />
-      {hideIcon && <FaPenToSquare color="var(--color-grey-400)" />}
+      {hideIcon && (
+        <FaPenToSquare color="var(--color-grey-400)" style={{ zIndex: 10 }} />
+      )}
     </Container>
   );
 }

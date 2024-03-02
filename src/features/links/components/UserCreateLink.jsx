@@ -110,7 +110,7 @@ function UserCreateLink() {
             value={link}
             onChange={(e) => setLink(e.target.value)}
           />
-          <Button className="brand">
+          <Button className="brand" disabled={!title || !link}>
             {isPending ? (
               <>
                 Adding Link <SpinnerMini />

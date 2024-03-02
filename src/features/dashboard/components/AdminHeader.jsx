@@ -4,7 +4,7 @@ import { HiOutlineShare } from "react-icons/hi2";
 import Logo from "../../../components/ui/Logo";
 import Button from "../../../components/ui/Button";
 import AdminMenu from "./AdminMenu";
-import UserMenu from "../../profile/components/UserMenuButton";
+import UserMenuDropdown from "../../profile/components/UserMenuDropdown";
 
 const Layout = styled.div`
   position: fixed;
@@ -80,7 +80,7 @@ function AdminHeader() {
           <Button className="fit-content secondary">
             <HiOutlineShare size={18} /> Share
           </Button>
-          <UserMenu />
+          <UserMenuDropdown />
         </div>
       </StyledAdminHeader>
     </Layout>
