@@ -7,6 +7,7 @@ import Input from "../../../components/form/Input";
 import FileUploadModal from "../../dashboard/components/FileUploadModal";
 import SkeletonAdminContainer from "../../../components/skeleton/SkeletonAdminContainer";
 import { useUpdateProfile } from "../hooks/useUpdateProfile";
+import { useUpdateProfileImage } from "../hooks/useUpdateProfileImage";
 
 const StyledUserProfile = styled.div`
   display: flex;
@@ -19,17 +20,32 @@ const StyledUserProfile = styled.div`
     align-items: center;
     gap: 20px;
 
-    & > button {
-      background: ${(props) =>
-        props.$profileImage
-          ? `url(${props.$profileImage})`
-          : "var(--color-grey-900)"};
+    & > img,
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-grey-900);
       color: var(--color-grey-0);
       font-size: 32px;
       font-weight: 600;
-      width: 120px;
+      width: 100px;
       height: 100px;
       border-radius: 100%;
+      object-fit: cover;
+    }
+
+    & img {
+      background-size: cover;
+    }
+
+    & span {
+      background-size: contain;
+      width: 120px;
+
+      @media screen and (max-width: 500px) {
+        width: 150px;
+      }
     }
 
     & div {
@@ -57,6 +73,8 @@ function UserProfile() {
   const { user } = useUser();
   const { profile, isPending } = useGetProfile(user.id);
   const { updateProfile } = useUpdateProfile();
+  const { updateProfileImage, isPending: isPendingProfileImage } =
+    useUpdateProfileImage();
 
   if (isPending) return <SkeletonAdminContainer />;
 
@@ -76,20 +94,41 @@ function UserProfile() {
     });
   }
 
+  function updateImage(image) {
+    updateProfileImage({ image, id });
+  }
+
+  function removeImage() {
+    updateProfile({
+      updateData: {
+        profileImage: "",
+      },
+      id,
+    });
+  }
+
   return (
     <AdminContainer>
       <StyledUserProfile>
         <div>
           {profileImage ? (
-            <button $profileImage={profileImage} />
+            <img src={profileImage} alt={`avatar${profileImage}`} />
           ) : (
-            <button>{username.split("")[0].toUpperCase()}</button>
+            <span>{username.split("")[0].toUpperCase()}</span>
           )}
           <div>
-            <FileUploadModal>
+            <FileUploadModal
+              accept="image/*"
+              onChange={updateImage}
+              isPending={isPendingProfileImage}
+            >
               <Button className="brand">Pick an image</Button>
             </FileUploadModal>
-            <Button className="secondary" disabled>
+            <Button
+              className="secondary"
+              disabled={!profileImage}
+              onClick={removeImage}
+            >
               Remove
             </Button>
           </div>

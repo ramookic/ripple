@@ -5,6 +5,12 @@ import SpinnerMini from "../../../components/ui/SpinnerMini";
 
 const StyledUserMenuButton = styled.button`
   outline-offset: 4px;
+  background-color: var(--color-grey-800);
+  color: var(--color-grey-0);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  font-weight: 600;
 
   &:hover {
     outline: 2px solid var(--color-grey-200);
@@ -14,13 +20,11 @@ const StyledUserMenuButton = styled.button`
     outline: 2px solid var(--color-grey-900);
   }
 
-  &.button {
-    background: var(--color-grey-800);
-    color: var(--color-grey-0);
+  & img {
     width: 40px;
     height: 40px;
-    border-radius: 50px;
-    font-weight: 600;
+    object-fit: contain;
+    border-radius: 50%;
   }
 `;
 
@@ -34,7 +38,7 @@ function UserMenuButton() {
   const { profileImage, username } = profile;
 
   return (
-    <StyledUserMenuButton className={profileImage ? "image" : "button"}>
+    <StyledUserMenuButton>
       {profileImage ? (
         <img src={profileImage} alt={username + "avatar"} />
       ) : (

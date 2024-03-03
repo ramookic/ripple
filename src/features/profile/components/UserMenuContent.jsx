@@ -39,6 +39,8 @@ const Header = styled.div`
     span {
       width: 44px;
       height: 44px;
+
+      border-radius: 50px;
     }
 
     & span {
@@ -47,7 +49,6 @@ const Header = styled.div`
       justify-content: center;
       background: var(--color-grey-800);
       color: var(--color-grey-0);
-      border-radius: 50px;
       font-weight: 600;
     }
 
