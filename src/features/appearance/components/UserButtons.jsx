@@ -19,6 +19,7 @@ const StyledUserButtons = styled.div`
       scale: 0.9;
       outline-offset: 10px;
       outline: 2px solid var(--color-grey-300);
+      border-radius: 4px;
     }
   }
 
@@ -34,7 +35,7 @@ const StyledUserButtons = styled.div`
 
     &.outline {
       & button {
-        outline: 1px solid var(--color-grey-800);
+        border: 1px solid var(--color-grey-800);
       }
     }
 
@@ -46,7 +47,7 @@ const StyledUserButtons = styled.div`
 
     &.hardShadow {
       & button {
-        outline: 1px solid var(--color-grey-800);
+        border: 1px solid var(--color-grey-800);
         box-shadow: 6px 6px var(--color-grey-800);
       }
     }
@@ -162,19 +163,57 @@ function UserButtons() {
         </div>
         <h4>Soft shadow</h4>
         <div className="softShadow">
-          <button onClick={() => updateButtonType("softShadow", "")} />
           <button
+            className={
+              buttonsType === "softShadow" && buttonsRounded === ""
+                ? "selected"
+                : ""
+            }
+            onClick={() => updateButtonType("softShadow", "")}
+          />
+          <button
+            className={
+              buttonsType === "softShadow" && buttonsRounded === "semiRounded"
+                ? "selected"
+                : ""
+            }
             onClick={() => updateButtonType("softShadow", "semiRounded")}
           />
-          <button onClick={() => updateButtonType("softShadow", "rounded")} />
+          <button
+            className={
+              buttonsType === "softShadow" && buttonsRounded === "rounded"
+                ? "selected"
+                : ""
+            }
+            onClick={() => updateButtonType("softShadow", "rounded")}
+          />
         </div>
         <h4>Hard shadow</h4>
         <div className="hardShadow">
-          <button onClick={() => updateButtonType("hardShadow", "")} />
           <button
+            className={
+              buttonsType === "hardShadow" && buttonsRounded === ""
+                ? "selected"
+                : ""
+            }
+            onClick={() => updateButtonType("hardShadow", "")}
+          />
+          <button
+            className={
+              buttonsType === "hardShadow" && buttonsRounded === "semiRounded"
+                ? "selected"
+                : ""
+            }
             onClick={() => updateButtonType("hardShadow", "semiRounded")}
           />
-          <button onClick={() => updateButtonType("hardShadow", "rounded")} />
+          <button
+            className={
+              buttonsType === "hardShadow" && buttonsRounded === "rounded"
+                ? "selected"
+                : ""
+            }
+            onClick={() => updateButtonType("hardShadow", "rounded")}
+          />
         </div>
       </StyledUserButtons>
       <h4>Button Color</h4>

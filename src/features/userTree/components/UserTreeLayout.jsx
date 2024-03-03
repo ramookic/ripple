@@ -10,6 +10,7 @@ import Button from "../../../components/ui/Button";
 
 import { useUserTree } from "../hooks/useUserTree";
 import UserTreeSocialIcons from "./UserTreeSocialIcons";
+import { useDocumentTitle } from "@uidotdev/usehooks";
 
 const StyledUserTreeLayout = styled.div`
   min-height: 100vh;
@@ -34,6 +35,10 @@ const StyledUserTreeLayout = styled.div`
 function UserTreeLayout() {
   const { username } = useParams();
   const { data, isPending } = useUserTree(username);
+
+  useDocumentTitle(
+    `${!data?.username ? "Link in Bio Tool" : data?.username} | Ripple`
+  );
 
   if (isPending) return;
 

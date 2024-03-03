@@ -6,6 +6,7 @@ import AdminContainer from "../../dashboard/components/AdminContainer";
 import Input from "../../../components/form/Input";
 import FileUploadModal from "../../dashboard/components/FileUploadModal";
 import SkeletonAdminContainer from "../../../components/skeleton/SkeletonAdminContainer";
+import { useUpdateProfile } from "../hooks/useUpdateProfile";
 
 const StyledUserProfile = styled.div`
   display: flex;
@@ -55,12 +56,25 @@ const StyledUserProfile = styled.div`
 function UserProfile() {
   const { user } = useUser();
   const { profile, isPending } = useGetProfile(user.id);
+  const { updateProfile } = useUpdateProfile();
 
   if (isPending) return <SkeletonAdminContainer />;
 
-  const { profileTitle, profileImage, username, bio } = profile;
+  const { profileTitle, profileImage, username, bio, id } = profile;
 
-  function updateProfile(value) {}
+  function updateProfileTitle(value) {
+    updateProfile({
+      updateData: { profileTitle: value },
+      id,
+    });
+  }
+
+  function updateProfileBio(value) {
+    updateProfile({
+      updateData: { bio: value },
+      id,
+    });
+  }
 
   return (
     <AdminContainer>
@@ -84,17 +98,16 @@ function UserProfile() {
           <Input
             placeholder="Profile Title"
             value={profileTitle}
-            onChange={updateProfile}
+            onChange={updateProfileTitle}
+            debounce
           />
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="4"
-            placeholder="Bio"
-            value={bio || ""}
-            onChange={updateProfile}
-          ></textarea>
+          <Input
+            placeholder="Profile Bio"
+            value={bio}
+            onChange={updateProfileBio}
+            debounce
+            textbox
+          />
         </div>
         <div>
           <Button className="secondary" to="/admin/settings">

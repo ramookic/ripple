@@ -20,7 +20,7 @@ const StyledUserTreeHeader = styled.header`
 
   & p {
     font-size: ${(props) => (props.$isPreview ? "12px" : "16px")};
-    font-weight: ${(props) => (props.$isPreview ? "400" : "500")};
+    font-weight: 400;
   }
 
   & img {

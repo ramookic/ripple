@@ -6,13 +6,18 @@ const StyledInput = styled.div`
   position: relative;
   display: flex;
 
-  & input {
+  & input,
+  textarea {
     width: ${(props) => (props.$fitContent ? "fit-content" : "100%")};
 
     &:focus + label {
       top: 6px;
       font-size: 12px;
     }
+  }
+
+  & textarea {
+    padding-top: 25px;
   }
 
   & label {
@@ -53,8 +58,11 @@ function Input({
   isEmail,
   isUrl,
   fitContent,
+  debounce,
+  textbox,
 }) {
   const [isVisible, setIsVisible] = useState(false);
+  const [editingValue, setEditingValue] = useState(value);
 
   function checkType() {
     if (isEmail) return "email";
@@ -67,15 +75,42 @@ function Input({
     }
   }
 
+  function debounceCallback(callback, delay) {
+    let timeoutId;
+
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => callback(...args), delay);
+    };
+  }
+
+  const debouncedUpdate = debounceCallback(onChange, 1000);
+
+  function handleInputDebounce(e) {
+    setEditingValue(e.target.value);
+    debouncedUpdate(e.target.value);
+  }
+
   return (
     <StyledInput value={value} $fitContent={fitContent} className={className}>
-      <input
-        type={checkType()}
-        id={id}
-        disabled={disabled}
-        value={value}
-        onChange={onChange}
-      />
+      {textbox ? (
+        <textarea
+          id={id}
+          cols="20"
+          rows="6"
+          disabled={disabled}
+          value={debounce ? editingValue : value}
+          onChange={debounce ? handleInputDebounce : onChange}
+        ></textarea>
+      ) : (
+        <input
+          type={checkType()}
+          id={id}
+          disabled={disabled}
+          value={debounce ? editingValue : value}
+          onChange={debounce ? handleInputDebounce : onChange}
+        />
+      )}
       <label htmlFor={id}>{placeholder}</label>
       {isPassword && (
         <button type="button" onClick={() => setIsVisible(!isVisible)}>

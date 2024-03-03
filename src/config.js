@@ -1,9 +1,4 @@
-const isProduction = process.env.NODE_ENV === "production";
-
-// Domain name should be without protocol (e.g., example.com)
-export const DOMAIN_NAME = isProduction
-  ? "ripple.com"
-  : window.location.hostname;
+export const DOMAIN_NAME = window.location.hostname;
 
 // Reserved keywords for username creation
 export const RESERVED_KEYWORDS = [
