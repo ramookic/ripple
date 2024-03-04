@@ -20,6 +20,20 @@ const StyledPreviewContainer = styled.div`
   height: 100vh;
   max-width: 340px;
   width: 100%;
+  position: relative;
+
+  & video {
+    max-width: 310px;
+    max-height: 690px;
+    border-radius: 32px;
+  }
+
+  & video,
+  & > .backgroundImage {
+    max-width: 310px;
+    max-height: 690px;
+    border-radius: 32px;
+  }
 
   ${UserTreeBackground}
 `;
@@ -62,10 +76,27 @@ function PreviewContainer() {
       className={appearance.backgroundType}
       $font={appearance.font}
       $direction={appearance.backgroundDirection}
-      $backgroundImage={appearance.backgroundImage}
+      $backgroundMedia={appearance.backgroundMedia}
       $backgroundColor={appearance.backgroundColor}
       $fontColor={appearance.fontColor}
     >
+      {appearance.backgroundType === "video" && (
+        <video
+          src={appearance.backgroundMedia}
+          title="Background video"
+          autoPlay
+          muted
+          loop
+        ></video>
+      )}
+
+      {appearance.backgroundType === "image" && (
+        <img
+          className="backgroundImage"
+          src={appearance.backgroundMedia}
+          alt="Background"
+        ></img>
+      )}
       <Container>
         <UserTreeHeader
           isPreview

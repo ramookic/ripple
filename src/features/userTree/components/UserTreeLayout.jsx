@@ -32,6 +32,24 @@ const StyledUserTreeLayout = styled.div`
   }
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 0;
+  height: 100%;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+    opacity: 0;
+  }
+
+  @media screen and (max-width: 44rem) {
+    padding: 4rem 10px;
+  }
+`;
+
 function UserTreeLayout() {
   const { username } = useParams();
   const { data, isPending } = useUserTree(username);
@@ -57,11 +75,28 @@ function UserTreeLayout() {
       className={appearance.backgroundType}
       $font={appearance.font}
       $direction={appearance.backgroundDirection}
-      $backgroundImage={appearance.backgroundImage}
+      $backgroundMedia={appearance.backgroundMedia}
       $backgroundColor={appearance.backgroundColor}
       $fontColor={appearance.fontColor}
     >
-      <div>
+      {appearance.backgroundType === "video" && (
+        <video
+          src={appearance.backgroundMedia}
+          title="Background video"
+          autoPlay
+          muted
+          loop
+        ></video>
+      )}
+
+      {appearance.backgroundType === "image" && (
+        <img
+          className="backgroundImage"
+          src={appearance.backgroundMedia}
+          alt="Background"
+        ></img>
+      )}
+      <Container>
         <UserTreeScrollHeader
           fontColor={appearance.fontColor}
           profileImage={profileImage}
@@ -83,7 +118,7 @@ function UserTreeLayout() {
         <Button className="fit-content light" to="/register">
           <SiLinktree /> Create your Ripple
         </Button>
-      </div>
+      </Container>
     </StyledUserTreeLayout>
   );
 }

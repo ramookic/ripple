@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import AdminContainer from "../../dashboard/components/AdminContainer";
 import tinycolor from "tinycolor2";
-import { HiMiniPhoto } from "react-icons/hi2";
 import { useGetAppearance } from "../hooks/useGetAppearance";
 import { useUser } from "../../authentication/hooks/useUser";
 import ColorPicker from "../../../components/ui/ColorPicker";
 import { useUpdateAppearance } from "../hooks/useUpdateAppearance";
 import UserBackgroundDirection from "./UserBackgroundDirection";
 import SkeletonAdminContainer from "../../../components/skeleton/SkeletonAdminContainer";
+import BackgroundVideo from "./BackgroundVideo";
+import BackgroundImage from "./BackgroundImage";
 
 const StyledUserBackgrounds = styled.div`
   display: grid;
@@ -21,7 +22,9 @@ const StyledUserBackgrounds = styled.div`
     grid-template-rows: 1fr;
   }
 
-  & button {
+  & button,
+  & div {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,6 +72,14 @@ const StyledUserBackgrounds = styled.div`
         );
       }
 
+      & img,
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
       &.image,
       &.video {
         border: 1px dashed var(--color-grey-400);
@@ -84,8 +95,13 @@ function UserBackgrounds() {
 
   if (isPending) return <SkeletonAdminContainer />;
 
-  const { id, backgroundColor, backgroundType, backgroundDirection } =
-    appearance;
+  const {
+    id,
+    backgroundColor,
+    backgroundType,
+    backgroundDirection,
+    backgroundMedia,
+  } = appearance;
 
   function handleUpdateColor(color) {
     updateAppearance({
@@ -125,24 +141,16 @@ function UserBackgrounds() {
           <span className="gradient"></span>
           <p>Gradient</p>
         </button>
-        <button
-          className={backgroundType === "image" ? "selected" : ""}
-          onClick={() => handleUpdateType("image")}
-        >
-          <span className="image">
-            <HiMiniPhoto />
-          </span>
-          <p>Image</p>
-        </button>
-        <button
-          className={backgroundType === "video" ? "selected" : ""}
-          onClick={() => handleUpdateType("video")}
-        >
-          <span className="video">
-            <HiMiniPhoto />
-          </span>
-          <p>Video</p>
-        </button>
+        <BackgroundImage
+          id={id}
+          backgroundType={backgroundType}
+          backgroundMedia={backgroundMedia}
+        />
+        <BackgroundVideo
+          id={id}
+          backgroundType={backgroundType}
+          backgroundMedia={backgroundMedia}
+        />
       </StyledUserBackgrounds>
       {backgroundType === "gradient" && (
         <>
@@ -153,12 +161,17 @@ function UserBackgrounds() {
           />
         </>
       )}
-      <h4>Color</h4>
-      <ColorPicker
-        value={backgroundColor}
-        onChange={handleUpdateColor}
-        placeholder="Color"
-      />
+      {backgroundType === "flat" ||
+        (backgroundType === "gradient" && (
+          <>
+            <h4>Color</h4>
+            <ColorPicker
+              value={backgroundColor}
+              onChange={handleUpdateColor}
+              placeholder="Color"
+            />
+          </>
+        ))}
     </AdminContainer>
   );
 }

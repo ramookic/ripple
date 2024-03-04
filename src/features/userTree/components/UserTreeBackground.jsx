@@ -14,10 +14,13 @@ const UserTreeBackground = css`
     );
   }
 
-  &.image {
-    background: url(${(props) => props.$backgroundImage});
-    background-repeat: no-repeat;
-    background-size: cover;
+  & video,
+  & > .backgroundImage {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
 `;
 
