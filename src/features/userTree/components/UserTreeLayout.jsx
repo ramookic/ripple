@@ -110,10 +110,15 @@ function UserTreeLayout() {
           bio={bio}
           username={usernameDb}
         />
-        <UserTreeLinkList links={links} appearance={appearance} />
+        <UserTreeLinkList
+          links={links}
+          appearance={appearance}
+          userId={data.user_id}
+        />
         <UserTreeSocialIcons
           icons={socialIcons}
           backgroundColor={appearance.backgroundColor}
+          userId={data.user_id}
         />
         <Button className="fit-content light" to="/register">
           <SiLinktree /> Create your Ripple

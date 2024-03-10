@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import UserTreeButton from "./UserTreeButton";
+import apiAddLinkClick from "../../../services/analytics/apiAddLinkClick";
 
 const StyledUserTreeLinkList = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ const StyledUserTreeLinkList = styled.div`
   gap: 20px;
 `;
 
-function UserTreeLinkList({ links, appearance, isPreview }) {
+function UserTreeLinkList({ links, appearance, isPreview, userId }) {
   return (
     <StyledUserTreeLinkList>
       {links.map((link, index) => (
@@ -20,6 +21,7 @@ function UserTreeLinkList({ links, appearance, isPreview }) {
           $shadowColor={appearance.buttonsShadowColor}
           $isPreview={isPreview}
           $display={link.display}
+          onClick={() => apiAddLinkClick(userId, link.id)}
           target="_blank"
           rel="noopener noreferrer"
           key={index}

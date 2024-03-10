@@ -2,6 +2,7 @@ import supabase from "../supabase";
 import apiGetLinks from "../links/apiGetLinks";
 import apiGetAppearance from "../appearance/apiGetAppearance";
 import apiGetSocialIcons from "../socialIcons/apiGetSocialIcons";
+import apiAddVisit from "../analytics/apiAddVisit";
 
 export default async function apiUserTree(username) {
   const { data: profileData, error: profileError } = await supabase
@@ -22,6 +23,8 @@ export default async function apiUserTree(username) {
   const appearance = await apiGetAppearance(userId);
 
   const socialIcons = await apiGetSocialIcons(userId);
+
+  await apiAddVisit(userId);
 
   return {
     ...profileData[0],

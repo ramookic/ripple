@@ -3,6 +3,7 @@ import styled from "styled-components";
 import tinycolor from "tinycolor2";
 import Icons from "../../appearance/components/Icons";
 import { SOCIAL_ICONS_SHARE } from "../../../config";
+import apiAddSocialIconClick from "../../../services/analytics/apiAddSocialIconClick";
 
 const StyledUserTreeSocialIcons = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const Icon = styled.a`
   }
 `;
 
-function UserTreeSocialIcons({ icons, backgroundColor }) {
+function UserTreeSocialIcons({ icons, backgroundColor, userId }) {
   return (
     <StyledUserTreeSocialIcons>
       {icons.map((icon) => (
@@ -36,6 +37,7 @@ function UserTreeSocialIcons({ icons, backgroundColor }) {
           target="_blank"
           rel="noopener noreferrer"
           key={icon.id}
+          onClick={() => apiAddSocialIconClick(userId, icon.id, icon.social)}
         >
           {React.createElement(Icons[icon.social])}
         </Icon>
