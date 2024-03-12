@@ -5,7 +5,6 @@ import { useLogin } from "../hooks/useLogin";
 import AuthFormLayout from "./AuthFormLayout";
 import Input from "../../../components/form/Input";
 import Button from "../../../components/ui/Button";
-import Link from "../../../components/ui/Link";
 import SpinnerMini from "../../../components/ui/SpinnerMini";
 
 function LoginForm() {
