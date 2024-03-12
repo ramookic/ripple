@@ -7,6 +7,19 @@ const StyledAnalyticsTopLocations = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+
+  & > :nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+
+    & p {
+      font-size: 14px;
+      color: var(--color-grey-400);
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+  }
 
   & .list {
     display: flex;
@@ -98,10 +111,9 @@ function AnalyticsTopLocations({ viewsAnalytics, clicksAnalytics }) {
   return (
     <AdminContainer>
       <StyledAnalyticsTopLocations>
-        <div className="navigation">
-          <button>Map</button>
-          <span>|</span>
-          <button className="selected">List</button>
+        <div>
+          <h4>Locations</h4>
+          <p>{selected}</p>
         </div>
         <div className="list">
           {currentData.map((country) =>

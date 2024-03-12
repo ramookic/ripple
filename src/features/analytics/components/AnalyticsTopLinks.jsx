@@ -9,10 +9,15 @@ const StyledAnalyticsTopLinks = styled.div`
 
   & > :nth-child(1) {
     display: flex;
-    justify-content: flex-end;
-    font-size: 14px;
-    color: var(--color-grey-400);
-    margin-bottom: 10px;
+    justify-content: space-between;
+    border-bottom: none;
+
+    & p {
+      font-size: 14px;
+      color: var(--color-grey-400);
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
   }
 
   & div {
@@ -54,7 +59,10 @@ function AnalyticsTopLinks({ links, linksAnalytics }) {
   return (
     <AdminContainer>
       <StyledAnalyticsTopLinks>
-        <p>Clicks</p>
+        <div>
+          <h4>Links</h4>
+          <p>Clicks</p>
+        </div>
         {sortedLinks.map((link) =>
           link.clicks === 0 ? (
             ""

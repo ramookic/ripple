@@ -48,7 +48,6 @@ function LoginForm() {
         id="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Link to="*">Forgot Password?</Link>
       <Button className="brand" disabled={!email || !password}>
         {isPending ? (
           <>

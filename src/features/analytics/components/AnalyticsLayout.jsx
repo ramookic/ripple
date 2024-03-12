@@ -33,11 +33,9 @@ function AnalyticsLayout() {
           <SkeletonAdminContainer />
           <SkeletonAdminContainer />
           <SkeletonAdminContainer />
-          <SkeletonAdminContainer />
         </>
       ) : (
         <>
-          <Heading>Activity</Heading>
           <Heading>Top Performing Links</Heading>
           <AnalyticsTopLinks links={links} linksAnalytics={data.links} />
           <Heading>Top Locations</Heading>
