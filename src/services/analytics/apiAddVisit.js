@@ -8,7 +8,7 @@ export default async function apiAddVisit(userId) {
 
   const lastVisitTime = localStorage.getItem("lastVisitTime");
   const timeDifference = new Date().getTime() - parseInt(lastVisitTime);
-  const timeThresholdForTabSwitch = 300000;
+  const timeThresholdForTabSwitch = 120000;
 
   if (timeDifference > timeThresholdForTabSwitch) {
     const locationReq = await fetch("https://freeipapi.com/api/json");
